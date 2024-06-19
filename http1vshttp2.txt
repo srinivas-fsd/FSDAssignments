@@ -1,1 +1,60 @@
- Difference between HTTP1.1 vs HTTP2
+Difference between HTTP1.1 vs HTTP2 :
+
+What is HTTP?
+    HTTP stands for Hyper Text Transfer Protocol, it is a  standard protovol for transferring data between a client and a server on the internet. It defines set of rules to 
+access the data based on the URL by using method name, host name, port and path.
+Example for a http URL : https://support.example.org.au:443
+
+HTTP 1.1 :
+    It was introduced in 1997
+    It is a enhancement of HTTP 1.0 that provides several extensions.
+The following enhancements are provided in 1.1 version :
+New methods: 
+    Along with the already available methods of HTTP 1.0, the 1.1 version added six additional methods: PUT, PATCH, DELETE, CONNECT, TRACE, and OPTIONS.
+Persistent connections: 
+    In HTTP 1.0, each request/response pair requires opening a new connection. In HTTP 1.1, it is possible to execute multiple requests.
+Continuous Status :
+    To prevent servers from rejecting unprocessable requests, clients are now restricted to sending the request headers and checking for a response.
+Host Header :
+    The host header is not officially required in HTTP 1.0, but it is a requirement in HTTP 1.1 as per the specification. 
+    This header plays a crucial role in routing messages through proxy servers, enabling the differentiation of domains that share the same IP address.
+
+HTTP2 :
+    It was introduced in 2015
+    HTTP/2 represents a major revision of the protocol and was developed by the HTTP Working Group of the Internet Engineering Task Force (IETF). 
+    The effort to standardize the protocol was supported by several popular internet browsers including Google Chrome, Microsoft Edge, Internet Explorer 11, Mozilla Firefox, Opera, Apple Safari, and Amazon Silk and web server software including Apache and nginx.
+    HTTP/2 enables a more efficient use of network resources and a reduced perception of latency by introducing header field compression and allowing multiple concurrent exchanges on the same connection. It also introduces unsolicited push of representations from servers to clients.
+    The basic protocol unit in HTTP/2 is a frame.
+    Each frame type serves a different purpose. For example, HEADERS and DATA frames form the basis of HTTP requests and responses.
+    Other frame types like SETTINGS, WINDOW_UPDATE, and PUSH_PROMISE are used in support of other HTTP/2 features.
+
+Difference between HTTP1.1 vs HTTP2 :
+    HTTP/2 brings about a notable advancement compared to HTTP/1.1 through the introduction of various features such as multiplexing, header compression, server push, stream prioritization, binary protocol, and enhanced security.
+    These enhancements collectively contribute to quicker page load times, decreased latency, improved efficiency, and enhanced overall performance for web applications.
+    While HTTP/1.1 laid the groundwork for contemporary web communication, HTTP/2 establishes a fresh benchmark for optimizing the web experience and fulfilling the requirements of an ever-growing intricate and dynamic online ecosystem.
+
+1. Multiplexing: 
+    One notable enhancement in HTTP/2 compared to HTTP/1.1 is multiplexing. In HTTP/1.1, multiple requests had to be sent sequentially over a single TCP connection, which could lead to potential bottlenecks and delays. 
+    HTTP/2 allows for the simultaneous transmission and reception of multiple requests and responses over a single connection, eliminating the need for multiple connections and reducing latency.
+
+2. Header Compression:
+    In HTTP/1.1, headers are transmitted as plaintext, which can result in redundant information being sent with each request and response, leading to increased overhead. 
+    HTTP/2 addresses this issue by utilizing header compression techniques, such as HPACK, to reduce the size of headers exchanged between clients and servers.
+    This improvement enhances efficiency and reduces latency.
+
+3. Server Push: 
+    HTTP/2 introduces a feature known as server push, which enables servers to proactively send resources to clients before they are even requested. 
+    This capability significantly reduces the number of round trips required to fetch resources, thereby improving page load times and overall performance. 
+    In contrast, HTTP/1.1 lacks this functionality, necessitating explicit resource requests from clients.
+
+4. Stream Prioritization: 
+    HTTP/2 allows for the assignment of priority levels to streams, enabling clients to indicate the importance of different resources. 
+    This feature facilitates the prioritization of critical resources for faster delivery, ensuring an enhanced user experience. 
+    On the other hand, HTTP/1.1 does not support stream prioritization, potentially resulting in suboptimal resource allocation.
+
+5. Binary Protocol:
+    HTTP/2 employs a binary protocol rather than plaintext, unlike HTTP/1.1. This binary framing facilitates more efficient data parsing, minimizes errors, and enables superior compression, ultimately leading to enhanced performance and decreased latency in comparison to HTTP/1.1.
+
+6. Security:
+     In terms of security, HTTP/2 encourages the utilization of secure connections by mandating them for specific functionalities such as server push, although both HTTP/1.1 and HTTP/2 can be employed over secure connections (HTTPS).
+     This emphasis on security ensures the preservation of data integrity and confidentiality, providing an elevated level of protection when compared to HTTP/1.1.
